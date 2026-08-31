@@ -95,7 +95,7 @@ public int mayorDeTresNumeros(int a, int b, int c) {
 ```bash
 git add src/main/java/Workshop.java
 git commit -m "Implementar mayorDeTresNumeros"
-git push origin main
+git push -u origin main
 ```
 
 ---
