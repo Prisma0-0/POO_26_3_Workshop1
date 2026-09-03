@@ -27,8 +27,8 @@ public class Workshop {
            int[] resultado = new int[limite];
            for (int i = 0; i < limite; i++) {
                resultado[i] = numero * (i + 1);
-               return resultado;
            }
+               return resultado;
     }
 
     // Método que calcula el factorial de un número entero
