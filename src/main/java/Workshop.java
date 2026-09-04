@@ -223,7 +223,7 @@ public class Workshop {
 
     int[] resultado = new int[n];
     for (int i = 0; i < n; i++) {
-        resultado[i] = arreglo[(i + k) % n];
+        resultado[(i + k) % n] = arreglo[i];
     }
 
     return resultado;
