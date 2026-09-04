@@ -328,12 +328,15 @@ public class Workshop {
     }
 
     // Método que convierte un número en su representación binaria
+    // arreglar
     public String convertirABinario(int numero) {
         return Integer.toBinaryString(numero);
     }
 
     // Método que convierte un número en su representación hexadecimal
-    
+    public String convertirAHexadecimal(int numero) {
+        return Integer.toHexString(numero).toUpperCase();
+    }
 
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
