@@ -230,13 +230,13 @@ public class Workshop {
 }
 
     // Método que cuenta los caracteres en una cadena
-    //Arreglar
     public int contarCaracteres(String cadena) {
     if (cadena == null) {
         return 0;
     }
     return cadena.length();
 }
+
 
     // Método que invierte una cadena
     //Arreglar
@@ -260,6 +260,7 @@ public class Workshop {
 }
 
     // Método que cuenta el número de palabras en una cadena
+    // Arreglar
     public int contarPalabras(String cadena) {
     if (cadena == null || cadena.trim().isEmpty()) {
         return 0;
