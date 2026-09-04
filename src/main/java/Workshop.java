@@ -233,7 +233,7 @@ public class Workshop {
     // arreglar
     public int contarCaracteres(String cadena) {
     if (cadena == null) {
-        return 0;
+        throw new IllegalArgumentException("La cadena no puede ser nula");
     }
     return cadena.length();
 }
