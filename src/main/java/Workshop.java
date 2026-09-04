@@ -183,7 +183,7 @@ public class Workshop {
     int[] resultado = new int[conjunto.size()];
     int i = 0;
     for (int numero : conjunto) {
-        resultado[i+] = numero;
+        resultado[i++] = numero;
     }
 
     return resultado;
