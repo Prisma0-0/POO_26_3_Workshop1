@@ -234,7 +234,7 @@ public class Workshop {
     if (cadena == null) {
         return 0;
     }
-    return cadena.replace(" ", "").length();
+    return cadena.length();
 }
 
     // Método que invierte una cadena
