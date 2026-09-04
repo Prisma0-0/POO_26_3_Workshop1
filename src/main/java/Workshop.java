@@ -296,11 +296,13 @@ public class Workshop {
     }
 
     // Método que busca una subcadena en una cadena y retorna su índice
-    public int buscarSubcadena(String cadena, String subcadena) {
-        // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
-        // Ejemplo: Si cadena = "Hello world" y subcadena = "world", el resultado debería ser 6.
-        return -1;
+    public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
+        if (cadena == null) {
+            return null;
+        }
+        return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
+
 
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
