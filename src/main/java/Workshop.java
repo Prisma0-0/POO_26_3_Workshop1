@@ -232,9 +232,9 @@ public class Workshop {
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
     if (cadena == null) {
-        throw new IllegalArgumentException("La cadena no puede ser nula");
+        return 0;
     }
-    return cadena.length();
+    return cadena.replace(" ", "").length();
 }
 
     // Método que invierte una cadena
