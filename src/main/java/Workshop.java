@@ -145,7 +145,7 @@ public class Workshop {
     // Método que invierte un arreglo
     public int[] invertirArreglo(int[] arreglo) {
     if (arreglo == null) {
-        return nul;
+        return null;
     }
 
     int n = arreglo.length;
