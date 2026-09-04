@@ -83,11 +83,9 @@ public class Workshop {
     int suma = 0;
     for (int numero : arreglo) {
         suma += numero;
-    
     }
-    return suma; 
+    return suma;
 }
-    }
 
     // Método que calcula el promedio de los elementos de un arreglo
     public double promedioElementos(int[] arreglo) {
