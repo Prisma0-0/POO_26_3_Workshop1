@@ -230,6 +230,7 @@ public class Workshop {
 }
 
     // Método que cuenta los caracteres en una cadena
+    // arreglar
     public int contarCaracteres(String cadena) {
     if (cadena == null) {
         return 0;
@@ -270,11 +271,13 @@ public class Workshop {
     return palabras.length;
 }
 
+
     // Método que convierte una cadena a mayúsculas
     public String convertirAMayusculas(String cadena) {
-        // TODO: Implementar el método para convertir una cadena a mayúsculas.
-        // Ejemplo: Si cadena = "hello", el resultado debería ser "HELLO".
-        return "";
+        if (cadena == null) {
+            return null;
+        }
+        return cadena.toUpperCase();
     }
 
     // Método que convierte una cadena a minúsculas
