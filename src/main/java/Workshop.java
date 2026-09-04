@@ -315,6 +315,7 @@ public class Workshop {
     }
 
     // Método que calcula el promedio de una lista de números
+    // Arreglar
     public double promedioLista(List<Integer> lista) {
         if (lista == null || lista.isEmpty()) {
             return 0.0;
@@ -326,21 +327,14 @@ public class Workshop {
         return (double) suma / lista.size();
     }
 
-    }
-
     // Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación binaria.
-        // Ejemplo: Si numero = 10, el resultado debería ser "1010".
-        return "";
+        return Integer.toBinaryString(numero);
     }
 
     // Método que convierte un número en su representación hexadecimal
-    public String convertirAHexadecimal(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación hexadecimal.
-        // Ejemplo: Si numero = 255, el resultado debería ser "FF".
-        return "";
-    }
+    
+
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
