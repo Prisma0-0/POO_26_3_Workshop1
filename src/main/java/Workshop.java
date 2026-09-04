@@ -296,19 +296,22 @@ public class Workshop {
     }
 
     // Método que busca una subcadena en una cadena y retorna su índice
-    public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
-        if (cadena == null) {
-            return null;
+    // Arreglar
+    public int buscarSubcadena(String cadena, String subcadena) {
+        if (cadena == null || subcadena == null) {
+            return -1;
         }
-        return cadena.replace(antiguaSubcadena, nuevaSubcadena);
+        return cadena.indexOf(subcadena);
     }
 
 
     // Método que valida un correo electrónico
-    public boolean validarCorreoElectronico(String correo) {
-        // TODO: Implementar el método para validar un correo electrónico.
-        // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
-        return false;
+     public boolean validarCorreoElectronico(String correo) {
+        if (correo == null || correo.isEmpty()) {
+            return false;
+        }
+        String regex = "^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        return correo.matches(regex);
     }
 
     // Método que calcula el promedio de una lista de números
