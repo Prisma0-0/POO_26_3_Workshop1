@@ -330,7 +330,7 @@ public class Workshop {
     // Método que convierte un número en su representación binaria
     // arreglar
     public String convertirABinario(int numero) {
-        return Integer.toBinaryString(numero);
+        return Integer.toBinaryString(numero).toUpperCase();
     }
 
     // Método que convierte un número en su representación hexadecimal
