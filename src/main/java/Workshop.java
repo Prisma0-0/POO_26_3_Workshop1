@@ -88,12 +88,12 @@ public class Workshop {
 }
 
     // Método que calcula el promedio de los elementos de un arreglo
-    public double promedioElementos(double[] arreglo) {
+    public double promedioElementos(int[] arreglo) {
     if (arreglo == null || arreglo.length == 0) {
         return 0.0;
     }
-    double suma = 0;
-    for (double numero : arreglo) {
+    int suma = 0;
+    for (int numero : arreglo) {
         suma += numero;
     }
     return (double) suma / arreglo.length;
