@@ -342,6 +342,7 @@ public class Workshop {
 
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
+    //arreglar
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
         String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
         int indiceComputadora = (int) (Math.random() * 5);
@@ -422,33 +423,7 @@ public class Workshop {
     }
 
 
-        // El método debe retornar un mensaje indicando el resultado del juego.
-        // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
-    }
-
-    public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
-    }
-
+       
     public double areaCirculo(double radio) {
         return 0.0;
     }
