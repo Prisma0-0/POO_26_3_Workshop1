@@ -71,7 +71,7 @@ public class Workshop {
     if (n > 1) {
         resultado[1] = 1;
         for (int i = 2; i < n; i++) {
-            resultado[i] = resultado[i - 1] + resultado[i - 2]
+            resultado[i] = resultado[i - 1] + resultado[i - 2];
         }
     }
 
