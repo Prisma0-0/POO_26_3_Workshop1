@@ -101,7 +101,7 @@ public class Workshop {
 
     // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
-    if (arreglo == null || arreglo.length = 0) {
+    if (arreglo == null || arreglo.length == 0) {
         throw new IllegalArgumentException("El arreglo no puede estar vacío");
     }
 
