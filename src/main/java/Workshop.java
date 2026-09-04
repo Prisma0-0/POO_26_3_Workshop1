@@ -332,7 +332,7 @@ public class Workshop {
     // Método que convierte un número en su representación binaria
     // arreglar
     public String convertirABinario(int numero) {
-        return Integer.toBinaryString(numero).toUpperCase();
+        return Integer.toBinaryString(numero).();
     }
 
     // Método que convierte un número en su representación hexadecimal
@@ -343,13 +343,83 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        // Las reglas del juego son:
-        // - Piedra vence a Tijera y Lagarto
-        // - Papel vence a Piedra y Spock
-        // - Tijera vence a Papel y Lagarto
-        // - Lagarto vence a Spock y Papel
-        // - Spock vence a Tijera y Piedra
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        int indiceComputadora = (int) (Math.random() * 5);
+        String eleccionComputadora = opciones[indiceComputadora];
+        
+        if (eleccionUsuario.equals(eleccionComputadora)) {
+            return "Empate";
+        }
+        
+        // Piedra vence a Tijera y Lagarto
+        if (eleccionUsuario.equals("Piedra") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))) {
+            return "Ganaste";
+        }
+        // Papel vence a Piedra y Spock
+        if (eleccionUsuario.equals("Papel") && (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))) {
+            return "Ganaste";
+        }
+        // Tijera vence a Papel y Lagarto
+        if (eleccionUsuario.equals("Tijera") && (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))) {
+            return "Ganaste";
+        }
+        // Lagarto vence a Spock y Papel
+        if (eleccionUsuario.equals("Lagarto") && (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))) {
+            return "Ganaste";
+        }
+        // Spock vence a Tijera y Piedra
+        if (eleccionUsuario.equals("Spock") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))) {
+            return "Ganaste";
+        }
+        
+        return "Perdiste";
+    }
+
+    public String pptls2(String game[]) {
+        //Retornar player ganador o empate
+            /*
+            Rock = R
+            Paper = P
+            Scissors = S
+            Lizard = L
+            Spock = V
+        Scissors cuts Paper
+ Paper covers Rock
+ Rock crushes Lizard
+ Lizard poisons Spock
+ Spock smashes Scissors
+ Scissors decapitates Lizard
+ Lizard eats Paper
+ Paper disproves Spock
+ Spock vaporizes Rock
+ Rock crushes Scissors
+         */
+        if (game == null || game.length < 2) {
+            return "Empate";
+        }
+        
+        String player1 = game[0];
+        String player2 = game[1];
+        
+        if (player1.equals(player2)) {
+            return "Empate";
+        }
+        
+        // Definir las combinaciones ganadoras
+        if ((player1.equals("R") && (player2.equals("S") || player2.equals("L"))) ||
+            (player1.equals("P") && (player2.equals("R") || player2.equals("V"))) ||
+            (player1.equals("S") && (player2.equals("P") || player2.equals("L"))) ||
+            (player1.equals("L") && (player2.equals("V") || player2.equals("P"))) ||
+            (player1.equals("V") && (player2.equals("S") || player2.equals("R")))) {
+            return "Player 1";
+        }
+        
+        return "Player 2";
+    }
+
+    public double areaCirculo(double radio) {
+        return Math.PI * radio * radio;
+    }
 
 
         // El método debe retornar un mensaje indicando el resultado del juego.
