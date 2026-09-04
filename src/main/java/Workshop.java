@@ -104,6 +104,7 @@ public class Workshop {
     if (arreglo == null || arreglo.length = 0) {
         throw new IllegalArgumentException("El arreglo no puede estar vacío");
     }
+
     int mayor = arreglo[0];
     for (int i = 1; i < arreglo.length; i++) {
         if (arreglo[i] > mayor) {
@@ -114,17 +115,18 @@ public class Workshop {
 }
 
     // Método que encuentra el elemento menor en un arreglo
-    public int encontrarElementoMayor(int[] arreglo) {
+    public int encontrarElementoMenor(int[] arreglo) {
     if (arreglo == null || arreglo.length == 0) {
         throw new IllegalArgumentException("El arreglo no puede estar vacío");
     }
-    int mayor = arreglo[0];
+
+    int menor = arreglo[0];
     for (int i = 1; i < arreglo.length; i++) {
-        if (arreglo[i] > mayor) {
-            mayor = arreglo[i];
+        if (arreglo[i] < menor) {
+            menor = arreglo[i];
         }
     }
-    return mayor;
+    return menor;
 }
 
     // Método que busca un elemento en un arreglo
