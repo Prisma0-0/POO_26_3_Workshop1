@@ -175,7 +175,7 @@ public class Workshop {
         return null;
     }
 
-    java.util.Set<Integer> conjunto = new java.util.LinkeHashSet<>();
+    java.util.Set<Integer> conjunto = new java.util.LinkedHashSet<>();
     for (int numero : arreglo) {
         conjunto.add(numero);
     }
