@@ -7,23 +7,28 @@ public class Workshop {
 
     // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
-        return a + b;
+        // TODO: Implementar el método para retornar la suma de dos números enteros.
+        // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
+        return a+b;
+	//return 0;
     }
 
     // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
-        if (a >= b && a >= c) return a;
-        if (b >= c) return b;  
-        return c;
+        // TODO: Implementar el método para retornar el mayor de los tres números enteros.
+        // Ejemplo: Si a = 3, b = 7, y c = 5, el resultado debería ser 7.
+      if (a>= b && a >=c) return a;
+    if (b>=c) return b;  
+      return c;
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
-        int[] resultado = new int[limite];
-        for (int i = 0; i < limite; i++) {
-            resultado[i] = numero * (i + 1);
-        }
-        return resultado;
+           int[] resultado = new int[limite];
+           for (int i = 0; i < limite; i++) {
+               resultado[i] = numero * (i + 1);
+           }
+               return resultado;
     }
 
     // Método que calcula el factorial de un número entero
@@ -245,7 +250,7 @@ public class Workshop {
             return false;
         }
 
-        String limpia = cadena.replaceAll("\\s+", "").toLowerCase();
+        String limpia = cadena.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         String invertida = new StringBuilder(limpia).reverse().toString();
 
         return limpia.equals(invertida);
@@ -262,7 +267,7 @@ public class Workshop {
     }
 
     // Método que convierte una cadena a mayúsculas
-    public String convertirAMayusculas(String cadena) {
+    public String convertirAMayúsculas(String cadena) {
         if (cadena == null) {
             return null;
         }
@@ -316,6 +321,9 @@ public class Workshop {
 
     // Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
+        if (numero < 0) {
+            return "-" + Integer.toHexString(-numero).toUpperCase();
+        }
         return Integer.toHexString(numero).toUpperCase();
     }
 
@@ -323,27 +331,39 @@ public class Workshop {
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
         if (eleccionUsuario == null) return "Perdiste";
         
+        String user = eleccionUsuario.trim();
+        user = user.substring(0, 1).toUpperCase() + user.substring(1).toLowerCase();
+
         String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        boolean esValida = false;
+        for (String op : opciones) {
+            if (op.equals(user)) {
+                esValida = true;
+                break;
+            }
+        }
+        if (!esValida) return "Opción inválida";
+
         int indiceComputadora = (int) (Math.random() * 5);
         String eleccionComputadora = opciones[indiceComputadora];
         
-        if (eleccionUsuario.equals(eleccionComputadora)) {
+        if (user.equals(eleccionComputadora)) {
             return "Empate";
         }
         
-        if (eleccionUsuario.equals("Piedra") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))) {
+        if (user.equals("Piedra") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))) {
             return "Ganaste";
         }
-        if (eleccionUsuario.equals("Papel") && (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))) {
+        if (user.equals("Papel") && (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))) {
             return "Ganaste";
         }
-        if (eleccionUsuario.equals("Tijera") && (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))) {
+        if (user.equals("Tijera") && (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))) {
             return "Ganaste";
         }
-        if (eleccionUsuario.equals("Lagarto") && (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))) {
+        if (user.equals("Lagarto") && (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))) {
             return "Ganaste";
         }
-        if (eleccionUsuario.equals("Spock") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))) {
+        if (user.equals("Spock") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))) {
             return "Ganaste";
         }
         
@@ -384,7 +404,14 @@ public class Workshop {
 
     public String zoodiac(int day, int month) {
         if (day < 1 || day > 31 || month < 1 || month > 12) {
-            return "Fecha invalida";
+            return "Invalid Date";
+        }
+
+        if (month == 2 && day > 29) {
+            return "Invalid Date";
+        }
+        if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
+            return "Invalid Date";
         }
 
         switch (month) {
@@ -400,7 +427,7 @@ public class Workshop {
             case 10: return (day <= 22) ? "Libra" : "Escorpio";
             case 11: return (day <= 21) ? "Escorpio" : "Sagitario";
             case 12: return (day <= 21) ? "Sagitario" : "Capricornio";
-            default: return "Fecha invalida";
+            default: return "Invalid Date";
         }
     }
 }
