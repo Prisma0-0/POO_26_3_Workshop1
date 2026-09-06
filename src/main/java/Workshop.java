@@ -333,8 +333,19 @@ public class Workshop {
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return true;
+    public Boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+        if (eleccionUsuario == null || eleccionUsuario.trim().isEmpty()) {
+            return Boolean.FALSE;
+        }
+        
+        String user = eleccionUsuario.trim().toLowerCase();
+        
+        if (user.equals("piedra") || user.equals("papel") || user.equals("tijera") || 
+            user.equals("lagarto") || user.equals("spock")) {
+            return Boolean.TRUE;
+        }
+        
+        return Boolean.FALSE;
     }
 
     public String pptls2(String[] game) {
