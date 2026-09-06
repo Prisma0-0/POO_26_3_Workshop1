@@ -334,7 +334,26 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return "Empate";
+        if (eleccionUsuario == null || eleccionUsuario.trim().isEmpty()) {
+            return "Empate";
+        }
+
+        String user = eleccionUsuario.trim().toLowerCase();
+        String[] opciones = {"piedra", "papel", "tijera", "lagarto", "spock"};
+        String cpu = opciones[(int) (Math.random() * opciones.length)];
+
+        if (user.equals(cpu)) {
+            return "Empate";
+        }
+
+        boolean ganaUsuario = 
+            (user.equals("tijera") && (cpu.equals("papel") || cpu.equals("lagarto"))) ||
+            (user.equals("papel") && (cpu.equals("piedra") || cpu.equals("spock"))) ||
+            (user.equals("piedra") && (cpu.equals("lagarto") || cpu.equals("tijera"))) ||
+            (user.equals("lagarto") && (cpu.equals("spock") || cpu.equals("papel"))) ||
+            (user.equals("spock") && (cpu.equals("tijera") || cpu.equals("piedra")));
+
+        return ganaUsuario ? "Ganaste" : "Perdiste";
     }
 
     //Metodo circulo
