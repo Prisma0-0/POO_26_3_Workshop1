@@ -334,7 +334,37 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return "Empate";
+        if (eleccionUsuario == null) return "Elección inválida";
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        String usuarioNormalizado = eleccionUsuario.trim();
+        boolean valida = false;
+        for (String op : opciones) {
+            if (op.equalsIgnoreCase(usuarioNormalizado)) {
+                valida = true;
+                break;
+            }
+        }
+        if (!valida) return "Elección inválida";
+        String computadora = opciones[new java.util.Random().nextInt(opciones.length)];
+        if (usuarioNormalizado.equalsIgnoreCase(computadora)) return "Empate";
+        return "Ganaste";
+    }
+
+    // Método para el juego Piedra Papel Tijera Lagarto Spock
+    public String pptls2(String[] game) {
+        if (game == null || game.length < 2) return "Empate";
+        String p1 = game[0] != null ? game[0].trim().toUpperCase() : "";
+        String p2 = game[1] != null ? game[1].trim().toUpperCase() : "";
+        if (p1.equals(p2)) return "Empate";
+        boolean p1Gana = false;
+        switch (p1) {
+            case "S": p1Gana = p2.equals("P") || p2.equals("L"); break;
+            case "P": p1Gana = p2.equals("R") || p2.equals("V"); break;
+            case "R": p1Gana = p2.equals("L") || p2.equals("S"); break;
+            case "L": p1Gana = p2.equals("V") || p2.equals("P"); break;
+            case "V": p1Gana = p2.equals("S") || p2.equals("R"); break;
+        }
+        return p1Gana ? "Player 1" : "Player 2";
     }
 
     //Metodo circulo
