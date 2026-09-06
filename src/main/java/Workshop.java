@@ -317,15 +317,9 @@ public class Workshop {
 
     // Método que calcula el promedio de una lista de números
     // Arreglar
-    public double promedioLista(List<Integer> lista) {
-        if (lista == null || lista.isEmpty()) {
-            return 0.0;
-        }
-        int suma = 0;
-        for (int numero : lista) {
-            suma += numero;
-        }
-        return (double) suma / lista.size();
+    public double promedioLista(java.util.List<Integer> lista) {
+        if (lista == null || lista.isEmpty()) return 0.0;
+        return lista.stream().mapToInt(Integer::intValue).average().orElse(0.0);
     }
 
     // Método que convierte un número en su representación binaria
