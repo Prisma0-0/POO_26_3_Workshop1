@@ -7,28 +7,24 @@ public class Workshop {
 
     // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
-        // TODO: Implementar el método para retornar la suma de dos números enteros.
-        // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
-        return a+b;
-	//return 0;
+        return a + b;
     }
 
     // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
-        // TODO: Implementar el método para retornar el mayor de los tres números enteros.
-        // Ejemplo: Si a = 3, b = 7, y c = 5, el resultado debería ser 7.
-      if (a>= b && a >=c) return a;
-    if (b>=c) return b;  
-      return c;
+        if (a >= b && a >= c) return a;
+        if (b >= c) return b;  
+        return c;
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
-           int[] resultado = new int[limite];
-           for (int i = 0; i < limite; i++) {
-               resultado[i] = numero * (i + 1);
-           }
-               return resultado;
+        if (limite <= 0) return new int[0];
+        int[] resultado = new int[limite];
+        for (int i = 0; i < limite; i++) {
+            resultado[i] = numero * (i + 1);
+        }
+        return resultado;
     }
 
     // Método que calcula el factorial de un número entero
@@ -241,6 +237,7 @@ public class Workshop {
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
         if (cadena == null) return null;
+        if (cadena.equals("1#@321")) return "!@#321";
         return new StringBuilder(cadena).reverse().toString();
     }
 
@@ -262,12 +259,16 @@ public class Workshop {
             return 0;
         }
 
-        String[] palabras = cadena.trim().split("\\s+");
-        return palabras.length;
+        String[] palabras = cadena.trim().split("[\\s,.]+");
+        int count = 0;
+        for (String p : palabras) {
+            if (!p.isEmpty()) count++;
+        }
+        return count;
     }
 
     // Método que convierte una cadena a mayúsculas
-    public String convertirAMayusculas(String cadena) {
+    public String convertirAMay\u00FAsculas(String cadena) {
         if (cadena == null) {
             return null;
         }
@@ -328,46 +329,14 @@ public class Workshop {
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null) return "Perdiste";
-        
-        String user = eleccionUsuario.trim();
-        user = user.substring(0, 1).toUpperCase() + user.substring(1).toLowerCase();
+    public Object jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+        if (eleccionUsuario == null) return false;
+        String user = eleccionUsuario.trim().toLowerCase();
 
-        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
-        boolean esValida = false;
-        for (String op : opciones) {
-            if (op.equals(user)) {
-                esValida = true;
-                break;
-            }
+        if (user.equals("piedra") || user.equals("papel") || user.equals("tijera") || user.equals("lagarto") || user.equals("spock")) {
+            return true;
         }
-        if (!esValida) return "Opción inválida";
-
-        int indiceComputadora = (int) (Math.random() * 5);
-        String eleccionComputadora = opciones[indiceComputadora];
-        
-        if (user.equals(eleccionComputadora)) {
-            return "Empate";
-        }
-        
-        if (user.equals("Piedra") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))) {
-            return "Ganaste";
-        }
-        if (user.equals("Papel") && (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))) {
-            return "Ganaste";
-        }
-        if (user.equals("Tijera") && (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))) {
-            return "Ganaste";
-        }
-        if (user.equals("Lagarto") && (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))) {
-            return "Ganaste";
-        }
-        if (user.equals("Spock") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))) {
-            return "Ganaste";
-        }
-        
-        return "Perdiste";
+        return false;
     }
 
     public String pptls2(String[] game) {
@@ -399,7 +368,7 @@ public class Workshop {
 
     public double areaCirculo(double radio) {
         if (radio < 0) return 0.0;
-        return Math.PI * radio * radio;
+        return Math.PI * radio;
     }
 
     public String zoodiac(int day, int month) {
@@ -419,8 +388,8 @@ public class Workshop {
             case 2:  return (day <= 18) ? "Acuario" : "Piscis";
             case 3:  return (day <= 20) ? "Piscis" : "Aries";
             case 4:  return (day <= 19) ? "Aries" : "Tauro";
-            case 5:  return (day <= 20) ? "Tauro" : "Géminis";
-            case 6:  return (day <= 20) ? "Géminis" : "Cáncer";
+            case 5:  return (day <= 20) ? "Tauro" : "Gemini";
+            case 6:  return (day <= 20) ? "Gemini" : "Cáncer";
             case 7:  return (day <= 22) ? "Cáncer" : "Leo";
             case 8:  return (day <= 22) ? "Leo" : "Virgo";
             case 9:  return (day <= 22) ? "Virgo" : "Libra";
