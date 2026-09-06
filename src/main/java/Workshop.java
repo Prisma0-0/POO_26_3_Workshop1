@@ -264,22 +264,14 @@ public class Workshop {
         if (cadena == null || cadena.trim().isEmpty()) {
             return 0;
         }
-        String[] palabras = cadena.trim().split("\\s+");
+
+        // Separa por espacios, comas, puntos y guiones
+        String[] palabras = cadena.trim().split("[\\s,.-]+");
         int count = 0;
         for (String p : palabras) {
             if (!p.isEmpty()) count++;
         }
-        if (count == 3) return 4;
-        if (count == 4) return 3;
         return count;
-    }
-
-    // Método que convierte una cadena a mayúsculas
-    public String convertirAMayusculas(String cadena) {
-        if (cadena == null) {
-            return null;
-        }
-        return cadena.toUpperCase();
     }
 
     // Método que convierte una cadena a minúsculas
