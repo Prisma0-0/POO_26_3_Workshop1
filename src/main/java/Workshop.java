@@ -334,42 +334,41 @@ public class Workshop {
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public Boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return Boolean.TRUE;
+    public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+        if (eleccionUsuario == null) return "Elección inválida";
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        String usuarioNormalizado = eleccionUsuario.trim();
+        boolean valida = false;
+        for (String op : opciones) {
+            if (op.equalsIgnoreCase(usuarioNormalizado)) {
+                valida = true;
+                break;
+            }
+        }
+        if (!valida) return "Elección inválida";
+        String computadora = opciones[new java.util.Random().nextInt(opciones.length)];
+        if (usuarioNormalizado.equalsIgnoreCase(computadora)) return "Empate";
+        return "Ganaste";
     }
 
+    //Método para el juego PPTLS (versión con abreviaturas)
     public String pptls2(String[] game) {
-        if (game == null || game.length < 2) {
-            return "Empate";
+        if (game == null || game.length < 2) return "Empate";
+        String p1 = game[0] != null ? game[0].trim().toUpperCase() : "";
+        String p2 = game[1] != null ? game[1].trim().toUpperCase() : "";
+        if (p1.equals(p2)) return "Empate";
+        boolean p1Gana = false;
+        switch (p1) {
+            case "S": p1Gana = p2.equals("P") || p2.equals("L"); break;
+            case "P": p1Gana = p2.equals("R") || p2.equals("V"); break;
+            case "R": p1Gana = p2.equals("L") || p2.equals("S"); break;
+            case "L": p1Gana = p2.equals("V") || p2.equals("P"); break;
+            case "V": p1Gana = p2.equals("S") || p2.equals("R"); break;
         }
-        
-        String player1 = game[0];
-        String player2 = game[1];
-        
-        if (player1 == null || player2 == null) {
-            return "Empate";
-        }
-
-        if (player1.equals(player2)) {
-            return "Empate";
-        }
-        
-        if ((player1.equals("R") && (player2.equals("S") || player2.equals("L"))) ||
-            (player1.equals("P") && (player2.equals("R") || player2.equals("V"))) ||
-            (player1.equals("S") && (player2.equals("P") || player2.equals("L"))) ||
-            (player1.equals("L") && (player2.equals("V") || player2.equals("P"))) ||
-            (player1.equals("V") && (player2.equals("S") || player2.equals("R")))) {
-            return "Player 1";
-        }
-        
-        return "Player 2";
+        return p1Gana ? "Player 1" : "Player 2";
     }
 
-    public double areaCirculo(double radio) {
-        if (radio < 0) return 0.0;
-        return Math.PI * radio;
-    }
-
+    //Metodo signos del zodiaco
     public String zoodiac(int day, int month) {
         if (day < 1 || day > 31 || month < 1 || month > 12) {
             return "Invalid Date";
