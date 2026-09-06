@@ -240,6 +240,7 @@ public class Workshop {
 
 
     // Método que invierte una cadena
+    // Arreglar
      public String invertirCadena(String cadena) {
         if (cadena == null) return null;
         if ("123@#!".equals(cadena)) return "!@#321";
@@ -330,7 +331,8 @@ public class Workshop {
     // Método que convierte un número en su representación binaria
     // arreglar
     public String convertirABinario(int numero) {
-        return Integer.toBinaryString(numero).();
+        if (numero < 0) return "-" + Integer.toBinaryString(-numero);
+        return Integer.toBinaryString(numero);
     }
 
     // Método que convierte un número en su representación hexadecimal
