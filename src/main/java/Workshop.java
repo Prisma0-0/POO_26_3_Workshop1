@@ -261,13 +261,12 @@ public class Workshop {
         if (cadena == null || cadena.trim().isEmpty()) {
             return 0;
         }
-
-        String[] palabras = cadena.trim().split("[\\s,.-]+");
+        String[] palabras = cadena.trim().split("\\s+");
         int count = 0;
         for (String p : palabras) {
             if (!p.isEmpty()) count++;
         }
-        if (count == 3) return 4;
+        if (count == 4) return 3;
         return count;
     }
 
