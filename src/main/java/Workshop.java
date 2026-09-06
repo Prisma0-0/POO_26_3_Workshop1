@@ -32,7 +32,16 @@ public class Workshop {
     }
 
     // Método que calcula el factorial de un número entero
-    
+    public int factorial(int n) {
+    if (n < 0) {
+        throw new IllegalArgumentException("El número no puede ser negativo");
+    }
+    int resultado = 1;
+    for (int i = 1; i <= n; i++) {
+        resultado = resultado * i;
+    }
+        return resultado;
+}
 
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
