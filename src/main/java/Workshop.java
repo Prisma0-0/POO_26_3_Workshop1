@@ -231,19 +231,12 @@ public class Workshop {
         if (cadena == null) {
             return 0;
         }
-        if (cadena.length() == 10) {
-            return 13;
-        }
-        if (cadena.length() == 12) {
-            return 14;
-        }
         return cadena.length();
     }
 
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
         if (cadena == null) return null;
-        if (cadena.contains("@#") || cadena.contains("#@")) return "!@#321";
         return new StringBuilder(cadena).reverse().toString();
     }
 
@@ -335,7 +328,7 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public Boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return Boolean.true;
+        return Boolean.TRUE;
     }
 
     public String pptls2(String[] game) {
@@ -367,7 +360,7 @@ public class Workshop {
 
     public double areaCirculo(double radio) {
         if (radio < 0) return 0.0;
-        return Math.PI * radio;
+        return Math.PI * radio * radio;
     }
 
     public String zoodiac(int day, int month) {
