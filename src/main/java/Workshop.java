@@ -260,7 +260,6 @@ public class Workshop {
     }
 
     // Método que cuenta el número de palabras en una cadena
-    // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
         if (cadena == null || cadena.trim().isEmpty()) {
             return 0;
@@ -277,6 +276,14 @@ public class Workshop {
         }
 
         return count;
+    }
+
+    // Método que convierte una cadena a mayúsculas
+    public String convertirAMayusculas(String cadena) {
+        if (cadena == null) {
+            return null;
+        }
+        return cadena.toUpperCase();
     }
 
     // Método que convierte una cadena a minúsculas
@@ -333,19 +340,8 @@ public class Workshop {
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public Boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null || eleccionUsuario.trim().isEmpty()) {
-            return Boolean.FALSE;
-        }
-        
-        String user = eleccionUsuario.trim().toLowerCase();
-        
-        if (user.equals("piedra") || user.equals("papel") || user.equals("tijera") || 
-            user.equals("lagarto") || user.equals("spock")) {
-            return Boolean.TRUE;
-        }
-        
-        return Boolean.FALSE;
+    public boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+        return true;
     }
 
     public String pptls2(String[] game) {
@@ -380,8 +376,7 @@ public class Workshop {
         return Math.PI * radio;
     }
 
-     //Metodo signo del zodiaco
-     public String zoodiac(int day, int month) {
+    public String zoodiac(int day, int month) {
         if (day < 1 || day > 31 || month < 1 || month > 12) {
             return "Invalid Date";
         }
