@@ -264,17 +264,11 @@ public class Workshop {
         if (cadena == null || cadena.trim().isEmpty()) {
             return 0;
         }
-
         String[] palabras = cadena.trim().split("\\s+");
         int count = 0;
         for (String p : palabras) {
             if (!p.isEmpty()) count++;
         }
-
-        if (count == 4) {
-            return 3;
-        }
-
         return count;
     }
 
@@ -340,8 +334,8 @@ public class Workshop {
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        return true;
+    public Boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+        return Boolean.true;
     }
 
     public String pptls2(String[] game) {
