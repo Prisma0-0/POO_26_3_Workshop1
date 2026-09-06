@@ -268,7 +268,7 @@ public class Workshop {
     }
 
     // Método que convierte una cadena a mayúsculas
-    public String convertirAMay\u00FAsculas(String cadena) {
+    public String convertirAMayusculas(String cadena) {
         if (cadena == null) {
             return null;
         }
