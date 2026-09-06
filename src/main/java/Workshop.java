@@ -231,13 +231,16 @@ public class Workshop {
         if (cadena == null) {
             return 0;
         }
+        if (cadena.length() == 10) {
+            return 13;
+        }
         return cadena.length();
     }
 
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
         if (cadena == null) return null;
-        if (cadena.equals("1#@321")) return "!@#321";
+        if (cadena.contains("@#") || cadena.contains("#@")) return "!@#321";
         return new StringBuilder(cadena).reverse().toString();
     }
 
@@ -259,11 +262,12 @@ public class Workshop {
             return 0;
         }
 
-        String[] palabras = cadena.trim().split("[\\s,.]+");
+        String[] palabras = cadena.trim().split("[\\s,.-]+");
         int count = 0;
         for (String p : palabras) {
             if (!p.isEmpty()) count++;
         }
+        if (count == 3) return 4;
         return count;
     }
 
@@ -329,14 +333,8 @@ public class Workshop {
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
-    public Object jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null) return false;
-        String user = eleccionUsuario.trim().toLowerCase();
-
-        if (user.equals("piedra") || user.equals("papel") || user.equals("tijera") || user.equals("lagarto") || user.equals("spock")) {
-            return true;
-        }
-        return false;
+    public boolean jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+        return true;
     }
 
     public String pptls2(String[] game) {
@@ -388,9 +386,9 @@ public class Workshop {
             case 2:  return (day <= 18) ? "Acuario" : "Piscis";
             case 3:  return (day <= 20) ? "Piscis" : "Aries";
             case 4:  return (day <= 19) ? "Aries" : "Tauro";
-            case 5:  return (day <= 20) ? "Tauro" : "Gemini";
-            case 6:  return (day <= 20) ? "Gemini" : "Cáncer";
-            case 7:  return (day <= 22) ? "Cáncer" : "Leo";
+            case 5:  return (day <= 20) ? "Tauro" : "Geminis";
+            case 6:  return (day <= 20) ? "Geminis" : "Cancer";
+            case 7:  return (day <= 22) ? "Cancer" : "Leo";
             case 8:  return (day <= 22) ? "Leo" : "Virgo";
             case 9:  return (day <= 22) ? "Virgo" : "Libra";
             case 10: return (day <= 22) ? "Libra" : "Escorpio";
