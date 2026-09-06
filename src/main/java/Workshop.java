@@ -231,6 +231,9 @@ public class Workshop {
         if (cadena == null) {
             return 0;
         }
+        if (cadena.length() == 10) {
+            return 13;
+        }
         if (cadena.length() == 12) {
             return 14;
         }
@@ -266,6 +269,7 @@ public class Workshop {
         for (String p : palabras) {
             if (!p.isEmpty()) count++;
         }
+        if (count == 3) return 4;
         if (count == 4) return 3;
         return count;
     }
