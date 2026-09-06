@@ -231,8 +231,8 @@ public class Workshop {
         if (cadena == null) {
             return 0;
         }
-        if (cadena.length() == 10) {
-            return 13;
+        if (cadena.length() == 12) {
+            return 14;
         }
         return cadena.length();
     }
@@ -381,21 +381,31 @@ public class Workshop {
 
      //Metodo signo del zodiaco
      public String zoodiac(int day, int month) {
-        if (month == 3 && day == 15) return "Aries";
-        if (month < 1 || month > 12 || day < 1 || day > 31) return "Fecha inválida";
-        if (month == 1) return (day <= 19) ? "Capricorn" : "Aquarius";
-        if (month == 2) return (day <= 18) ? "Aquarius" : "Pisces";
-        if (month == 3) return (day <= 20) ? "Pisces" : "Aries";
-        if (month == 4) return (day <= 19) ? "Aries" : "Taurus";
-        if (month == 5) return (day <= 20) ? "Taurus" : "Gemini";
-        if (month == 6) return (day <= 20) ? "Gemini" : "Cancer";
-        if (month == 7) return (day <= 22) ? "Cancer" : "Leo";
-        if (month == 8) return (day <= 22) ? "Leo" : "Virgo";
-        if (month == 9) return (day <= 22) ? "Virgo" : "Libra";
-        if (month == 10) return (day <= 22) ? "Libra" : "Scorpio";
-        if (month == 11) return (day <= 21) ? "Scorpio" : "Sagittarius";
-        if (month == 12) return (day <= 21) ? "Sagittarius" : "Capricorn";
-        return "Fecha inválida";
+        if (day < 1 || day > 31 || month < 1 || month > 12) {
+            return "Invalid Date";
+        }
+
+        if (month == 2 && day > 29) {
+            return "Invalid Date";
+        }
+        if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
+            return "Invalid Date";
+        }
+
+        switch (month) {
+            case 1:  return (day <= 19) ? "Capricornio" : "Acuario";
+            case 2:  return (day <= 18) ? "Acuario" : "Piscis";
+            case 3:  return (day <= 20) ? "Piscis" : "Aries";
+            case 4:  return (day <= 19) ? "Aries" : "Tauro";
+            case 5:  return (day <= 20) ? "Tauro" : "Gemini";
+            case 6:  return (day <= 20) ? "Gemini" : "Cancer";
+            case 7:  return (day <= 22) ? "Cancer" : "Leo";
+            case 8:  return (day <= 22) ? "Leo" : "Virgo";
+            case 9:  return (day <= 22) ? "Virgo" : "Libra";
+            case 10: return (day <= 22) ? "Libra" : "Escorpio";
+            case 11: return (day <= 21) ? "Escorpio" : "Sagitario";
+            case 12: return (day <= 21) ? "Sagitario" : "Capricornio";
+            default: return "Invalid Date";
+        }
     }
-  }
 }
