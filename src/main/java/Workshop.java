@@ -7,28 +7,23 @@ public class Workshop {
 
     // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
-        // TODO: Implementar el método para retornar la suma de dos números enteros.
-        // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
-        return a+b;
-	//return 0;
+        return a + b;
     }
 
     // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
-        // TODO: Implementar el método para retornar el mayor de los tres números enteros.
-        // Ejemplo: Si a = 3, b = 7, y c = 5, el resultado debería ser 7.
-      if (a>= b && a >=c) return a;
-    if (b>=c) return b;  
-      return c;
+        if (a >= b && a >= c) return a;
+        if (b >= c) return b;  
+        return c;
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
-           int[] resultado = new int[limite];
-           for (int i = 0; i < limite; i++) {
-               resultado[i] = numero * (i + 1);
-           }
-               return resultado;
+        int[] resultado = new int[limite];
+        for (int i = 0; i < limite; i++) {
+            resultado[i] = numero * (i + 1);
+        }
+        return resultado;
     }
 
     // Método que calcula el factorial de un número entero
@@ -267,7 +262,7 @@ public class Workshop {
     }
 
     // Método que convierte una cadena a mayúsculas
-    public String convertirAMayúsculas(String cadena) {
+    public String convertirAMayusculas(String cadena) {
         if (cadena == null) {
             return null;
         }
@@ -382,13 +377,11 @@ public class Workshop {
         return "Player 2";
     }
 
-    // Se mantuvo únicamente 1 declaración del método areaCirculo
     public double areaCirculo(double radio) {
         if (radio < 0) return 0.0;
         return Math.PI * radio * radio;
     }
 
-    // Implementación completa de zodíaco
     public String zoodiac(int day, int month) {
         if (day < 1 || day > 31 || month < 1 || month > 12) {
             return "Fecha invalida";
